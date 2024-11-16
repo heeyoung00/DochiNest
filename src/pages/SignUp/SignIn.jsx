@@ -4,8 +4,10 @@ import './SignIn.css';
 import S_Hedgehog from '../../pages/Login/L_Hedgehog.png'; 
 
 const SignIn = () => {
-  const nickname = "간지도치"; // 하드코딩된 닉네임
   const navigate = useNavigate();
+
+  // const token = localStorage.getItem('accessToken');
+  const nickname = localStorage.getItem('nickname');
 
   const handlePageClick = () => {
     navigate('/inputFam');

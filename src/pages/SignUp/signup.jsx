@@ -1,42 +1,45 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';  // useNavigate를 임포트
 import './SignUp.css';
+import axios from "axios"
 
 const SignUp = () => {
-  const [formData, setFormData] = useState({
-    id: '',
-    password: '',
-    email: '',
-    nickname: '',
-  });
+  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [nickname, setNickname] = useState('');
+  const [password, setPassword] = useState('');
   
   const navigate = useNavigate();  // useNavigate 훅을 사용하여 navigate 함수 생성
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+  const handleSignUp = async () => {
+    try {
+        const response = await axios.post('http://url/api/auth/register', {
+            username: username,
+            password: password,
+            email: email,
+            nickname: nickname
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': '*/*'
+            }
+        });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('폼 제출됨:', formData);
-    // 회원가입 처리 후 SignIn 페이지로 이동
-    navigate('/signin'); 
-    // 폼 초기화
-    setFormData({
-      id: '',
-      password: '',
-      email: '',
-      nickname: '',
-    });
-  };
+        if (response.data.isSuccess) {
+            alert('회원가입 성공!');
+            navigate('/login');
+        } else {
+            alert(`회원가입 실패: ${response.data.message}`);
+        }
+    } catch (error) {
+        console.error('회원가입 중 에러 발생:', error);
+        alert('회원가입 중 오류가 발생했습니다.');
+    }
+};
 
   return (
     <div className="signUpForm">
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}> */}
         <div className="inputGroup">
           <label htmlFor="id">
             아이디 <span className="required">*</span>
@@ -45,8 +48,8 @@ const SignUp = () => {
             type="text"
             id="id"
             name="id"
-            value={formData.id}
-            onChange={handleChange}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             className="inputField Id"
             placeholder="아이디를 입력하세요"
           />
@@ -60,8 +63,8 @@ const SignUp = () => {
             type="password"
             id="password"
             name="password"
-            value={formData.password}
-            onChange={handleChange}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             className="inputField Pw"
             placeholder="비밀번호를 입력하세요"
           />
@@ -75,8 +78,8 @@ const SignUp = () => {
             type="email"
             id="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
             className="inputField Email"
             placeholder="이메일을 입력하세요"
           />
@@ -90,15 +93,15 @@ const SignUp = () => {
             type="text"
             id="nickname"
             name="nickname"
-            value={formData.nickname}
-            onChange={handleChange}
+            value={nickname}
+            onChange={(e) => setNickname(e.target.value)}
             className="inputField Nickname"
             placeholder="닉네임을 입력하세요"
           />
         </div>
 
-        <button type="submit" className="submitBtn">회원가입</button>
-      </form>
+        <button type="submit" className="submitBtn" onClick={handleSignUp}>회원가입</button>
+      {/* </form> */}
     </div>
   );
 };
