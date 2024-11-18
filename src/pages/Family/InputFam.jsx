@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './InputFam.css';
-import S_Hedgehog from '../../pages/Login/L_Hedgehog.png'; 
+import S_Hedgehog from '../../pages/Login/L_Hedgehog.png';
 
 const InputFam = () => {
   const navigate = useNavigate();
@@ -20,9 +20,9 @@ const InputFam = () => {
     try {
       const response = await axios.post('http://url/api/group/create', {
         group_name: familyname,
-      },{
+      }, {
         headers: {
-          Authorization: `Bearer ${accessToken}`, 
+          Authorization: `Bearer ${accessToken}`,
         }
       });
       if (response.status === 200) {
@@ -40,23 +40,26 @@ const InputFam = () => {
       <div className="imageContainer">
         <img src={S_Hedgehog} alt="Hedgehog" className="Hedgehog" />
       </div>
-      <div className="formContainer">
-        <input 
-          type="text"
-          className='formText'
-          placeholder='가족명을 입력해주세요!'
-          value={familyname}
-          onChange={(e)=>setFamilyName(e.target.value)}
-          required
-        />
-        {/* <p className="formText">가족명을 입력해주세요!</p> */}
-      </div>
+      <input
+        type="text"
+        className="formText"
+        placeholder="가족명을 입력해주세요!"
+        value={familyname}
+        onChange={(e) => setFamilyName(e.target.value)}
+        required
+      />
+
       <button className='submit-family-name' onClick={handleFamilySubmit}>저장하기</button>
+
       <Link to="/가족구성원페이지" className="registerLink">
         가족구성원 등록하기 &gt;
       </Link>
-      
-      <button className="skipButton" onClick={handleSkipClick}>건너뛰기</button>
+
+      <p className="mypageText">
+        <span style={{ color: '#F9957F' }}>마이페이지</span>에서도 가족 구성원을 등록할 수 있습니다.
+      </p>
+
+      <button className="skipButton" onClick={handleSkipClick}>나중에 하기</button>
     </div>
   );
 };

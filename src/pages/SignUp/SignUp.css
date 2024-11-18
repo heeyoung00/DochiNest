@@ -63,6 +63,12 @@ body {
     font-size: 1rem;
 }
 
+.inputField:focus,
+.inputField.Email:focus {
+    border-color: #F9957F; 
+    outline: none; 
+}
+
 .submitBtn {
     padding: 10px;
     background: linear-gradient(to right, #F2F5D0, #F9957F);

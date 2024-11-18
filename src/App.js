@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Nav from "./components/Nav/Nav.jsx";
-import NavUp from "./components/NavUp/NavUp.jsx";
 import Main from "./pages/Main/Main.jsx";
 import MissionMain from "./pages/Mission/Mission_main.jsx"
 import MissionDetail from "./pages/Mission/Mission_detail.jsx"
@@ -11,6 +10,7 @@ import ProjectWrite from "./pages/Project/Project_write.jsx"
 import ProjectFinish from "./pages/Project/Project_finish.jsx"
 import MypageMain from "./pages/Mypage/Mypage_main.jsx"
 import UserEdit from "./pages/Mypage/UserEdit.jsx"
+import FamilyInfo from "./pages/Mypage/FamilyInfo.jsx";
 import FamilyPlus from "./pages/Mypage/FamilyPlus.jsx"
 import PointMain from "./pages/Point/PointMain.jsx"
 import Login from "./pages/Login/login.jsx";
@@ -33,6 +33,7 @@ function App() {
         <Route path='/ProjectFinish' element={<ProjectFinish/>}/>
         <Route path='/MypageMain' element={<><Nav /><MypageMain /></>}/>
         <Route path='/UserEdit' element={<><Nav /><UserEdit /></>}/>
+        <Route path='/FamilyInfo' element={<FamilyInfo />} />
         <Route path='/FamilyPlus' element={<><Nav /><FamilyPlus /></>}/>
         <Route path='/PointMain' element={<><Nav /><PointMain /></>}/>
         <Route path='/login' element={<Login />} />

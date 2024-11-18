@@ -39,7 +39,7 @@ const Login = () => {
 
   return (
     <div className="MainTheme">
-      <img src={S_Hedgehog} alt="Hedgehog" className="hedgehog" />
+      
       <h1 className="appName">고슴도치핑</h1>
       <form className="loginForm">
         <input 
