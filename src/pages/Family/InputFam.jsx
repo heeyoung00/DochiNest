@@ -11,23 +11,24 @@ const InputFam = () => {
 
   const handleSkipClick = () => {
     // 건너뛰기 버튼 클릭 시 '/가족구성원페이지'로 이동
-    navigate('/가족구성원페이지');
+    navigate('/');
   };
 
   const accessToken = localStorage.getItem("accessToken")
 
   const handleFamilySubmit = async () => {
     try {
-      const response = await axios.post('http://url/api/group/create', {
-        group_name: familyname,
-      }, {
+      const response = await axios.post('http://44.193.101.200:80/api/group/create', {
+        groupName: familyname,
+      },{
         headers: {
           Authorization: `Bearer ${accessToken}`,
         }
       });
       if (response.status === 200) {
         alert("등록 성공!");
-        navigate('/meetMain');
+        console.log("가족이름 저장 성공",response)
+        // navigate('/MeetMain');
       }
     } catch (error) {
       console.error("등록 실패:", error);
@@ -50,8 +51,7 @@ const InputFam = () => {
       />
 
       <button className='submit-family-name' onClick={handleFamilySubmit}>저장하기</button>
-
-      <Link to="/가족구성원페이지" className="registerLink">
+      <Link to="/FamilyPlus" className="registerLink">
         가족구성원 등록하기 &gt;
       </Link>
 

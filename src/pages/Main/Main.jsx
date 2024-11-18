@@ -1,5 +1,5 @@
-import React, { useState,useEffect } from 'react';
-import axios from "axios";
+import React, { useState} from 'react';
+// import axios from "axios";
 import "./Main.css";
 import profile from "./images/userImg.png";
 import ChatBot from "./ChatBot/ChatBot.jsx";
@@ -7,10 +7,13 @@ import submit from "./images/submit.png";
 import proj1 from "./images/project1.png";
 import proj2 from "./images/project2.png";
 import proj3 from "./images/project3.png";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Main() {
-    const user = { nickname: "간지 도치" };
+
+    const navigate = useNavigate()
+
     const hashtag = [
         { content: "#자녀나이" },
         { content: "#문화" },
@@ -22,7 +25,7 @@ export default function Main() {
         { content: "#나들이" },
     ];
 
-    const [mainMissionPost, setmainMissionPost] = useState([]); 
+    // const [mainMissionPost, setmainMissionPost] = useState([]); 
     const [userInput, setUserInput] = useState("");
     const [isChatVisible, setIsChatVisible] = useState(false); // 슬라이드 상태
     const [isChatBotVisible, setIsChatBotVisible] = useState(false); // 챗봇 보이기 상태
@@ -53,36 +56,36 @@ export default function Main() {
         }
     };
 
-    useEffect(() => {
-        const fetchPosts = async () => {
-        const accessToken = localStorage.getItem('accessToken');
-        try {
-            const response = await axios.get('http://server-api//api/auth/main',
-                {
-                    headers: {
-                        Authorization: `Bearer ${accessToken}`, 
-                    }
-                });
+    // useEffect(() => {
+    //     const fetchPosts = async () => {
+    //     const accessToken = localStorage.getItem('accessToken');
+    //     try {
+    //         const response = await axios.get('http://44.193.101.200:80//api/auth/main',
+    //             {
+    //                 headers: {
+    //                     Authorization: `Bearer ${accessToken}`, 
+    //                 }
+    //             });
 
-            if (response.data.isSuccess) {
-            setmainMissionPost(response.data); 
-            console.log("Fetched posts:", response.data); 
-            } else {
-            console.error('Failed to fetch post:', response.data.message);
-            }
-        } catch (error) {
-            console.error('Error fetching posts:', error);
-        }
-        };
-        fetchPosts();
-    }, []);
+    //         if (response.status===200) {
+    //         setmainMissionPost(response.data); 
+    //         console.log("Fetched posts:", response.data); 
+    //         } else {
+    //         console.error('Failed to fetch post:', response.data.message);
+    //         }
+    //     } catch (error) {
+    //         console.error('Error fetching posts:', error);
+    //     }
+    //     };
+    //     fetchPosts();
+    // }, []);
 
     return (
         <div className='main-container'>
             <div className='main-title-container'>
                 <div className='main-title-contents'>
                     <div className='main-title-contents-nickname'>
-                        <span>{mainMissionPost.nickname}</span>님,
+                        <span>{localStorage.nickname}</span>님,
                         <br />안녕하세요!
                     </div>
                     <div className='main-title-contents-sub'>
@@ -126,7 +129,7 @@ export default function Main() {
 
             <div className='main-project-container' onMouseMove={handleMouseMove}>
                 <div className='main-project-title'>이 달의 <span>도전 프로젝트</span></div>
-                <div className={`main-project-contents slide-${slideDirection}`}>
+                <div className={`main-project-contents slide-${slideDirection}`} onClick={() => navigate("/MissionMain")}>
                     <div className='main-project-1'>
                         <span>가족과 함께<br />떠나는 단풍놀이</span>
                         <div className='main-project-1-img'>
