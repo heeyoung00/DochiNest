@@ -18,7 +18,7 @@ import SignUp from "./pages/SignUp/signup.jsx";
 import SignIn from "./pages/SignUp/SignIn.jsx";
 import InputFam from "./pages/Family/InputFam.jsx";
 import NavUp from "./components/NavUp/NavUp.jsx";
-import FamilyInfo from "./pages/Mypage/Family_Info.jsx"
+import Family_Info from "./pages/Mypage/Family_Info.jsx"
 import FamilyEdit from "./pages/Mypage/FamilyEdit.jsx"
 
 
@@ -36,11 +36,11 @@ function App() {
         <Route path='/ProjectFinish' element={<ProjectFinish/>}/>
         <Route path='/MypageMain' element={<><Nav /><MypageMain /></>}/>
         <Route path='/UserEdit' element={<><Nav /><UserEdit /></>}/>
-        <Route path='/FamilyInfo' element={<FamilyInfo />} />
+        <Route path='/Family_Info' element={<Family_Info />} />
         <Route path='/FamilyPlus' element={<><Nav /><FamilyPlus /></>}/>
         <Route path='/PointMain' element={<><Nav /><PointMain /></>}/>
         <Route path='/signup' element={<><NavUp /><SignUp /></>} />
-        <Route path='/signin' element={<><NavUp /><SignIn /></>} />
+        <Route path='/SignIn' element={<><NavUp /><SignIn /></>} />
         <Route path='/inputFam' element={<><NavUp /><InputFam /></>} />
         <Route path='/FamilyInfo' element={<><Nav /><FamilyInfo /></>} />
         <Route path='/FamilyEdit' element={<><Nav /><FamilyEdit /></>} />

@@ -1,89 +1,66 @@
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center; /* 콘텐츠 중앙 정렬 */
-    align-items: center; /* 콘텐츠 중앙 정렬 */
-    overflow: hidden; /* 페이지 전체에서 스크롤을 막음 */
-}
-
-.signUpForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #ffffff;
-    width: 320px;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 80px;
-    max-height: 100vh; /* 화면 높이에 맞추기 */
-    overflow: hidden; /* signUpForm 안에서도 스크롤을 막음 */
-}
-
-
-.inputGroup {
-    margin-bottom: 15px;
-    width: 100%;
-}
-
-.inputGroup label {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
 .required {
     color: red;
     font-size: 1.2rem;
     margin-left: -3px;
+    vertical-align: middle; /* 세로 중앙 정렬 */
+    line-height: 1.2; /* 줄 높이를 약간 조정 */
 }
 
-.inputField {
-    width: 100%;
-    max-width: 333px;
-    height: 39px;
+.signinGroup label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.signUpForm {
+    background-color: #ffffff;
     padding: 10px;
-    border-radius: 50px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
+    box-sizing: border-box;
+    position: absolute; /* 부모의 위치를 절대 위치로 설정 */
+    top: 40%; /* 화면에서 50% 아래로 */
+    left: 50%; /* 화면에서 50% 왼쪽으로 */
+    transform: translate(-50%, -50%); /* 정확히 중앙에 오도록 이동 */
 }
 
-.inputField.Email {
-    width: 100%;
-    max-width: 290px;
-    height: 20px;
+.signinGroup {
+    margin-bottom: 15px;
+}
+
+.mandatoryId,
+.mandatoryPw,
+.mandatoryEmail,
+.mandatoryNickname {
+    width: 320px;
+    height: 15px;
     padding: 20px;
+    margin-top: 5px;
     border-radius: 50px;
     border: 1px solid #ccc;
     font-size: 1rem;
+    transition: border-color 0.3s ease;
+    border-color: #ccc; /* 기본 테두리 색상 */
+    outline: none;
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
 }
 
-.inputField:focus,
-.inputField.Email:focus {
-    border-color: #F9957F; 
-    outline: none; 
+.mandatoryId:focus,
+.mandatoryPw:focus,
+.mandatoryEmail:focus,
+.mandatoryNickname:focus {
+    border-color: #F9957F; /* 포커스 시 색상 변경 */
 }
 
 .submitBtn {
     padding: 10px;
     background: linear-gradient(to right, #F2F5D0, #F9957F);
     color: white;
-    width: 340px;
     height: 60px;
+    width: 100%; /* 버튼을 부모 너비에 맞게 확장 */
     border-radius: 50px;
     border: none;
-    font-size: 1.2rem;
+    font-size: 20px;
     cursor: pointer;
     margin-top: 15px;
-}
-
-@media (min-width: 768px) {
-    .signUpForm {
-        width: 400px;
-    }
 }

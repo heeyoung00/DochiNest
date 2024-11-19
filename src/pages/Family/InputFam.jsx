@@ -39,7 +39,7 @@ const InputFam = () => {
   return (
     <div className="inputFamContainer">
       <div className="imageContainer">
-        <img src={S_Hedgehog} alt="Hedgehog" className="Hedgehog" />
+        <img src={S_Hedgehog} alt="Hedgehog" className="cHedgehog" />
       </div>
       <input
         type="text"
