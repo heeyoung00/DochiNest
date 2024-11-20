@@ -1,5 +1,3 @@
-/* position absolute 때문에 상단바와 요소를 제외한 부분에 커서가 작동 안 함 */
-
 .signContainer {
     cursor: pointer;  /* signContainer에 커서 스타일 적용 */
     position: absolute;

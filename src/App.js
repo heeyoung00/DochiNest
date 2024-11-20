@@ -2,22 +2,22 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Nav from "./components/Nav/Nav.jsx";
 import Main from "./pages/Main/Main.jsx";
-import MissionMain from "./pages/Mission/Mission_main.jsx"
-import MissionDetail from "./pages/Mission/Mission_detail.jsx"
-import MissionWrite from "./pages/Mission/Mission_write.jsx"
-import MissionFinish from "./pages/Mission/Mission_finish.jsx"
-import ProjectWrite from "./pages/Project/Project_write.jsx"
-import ProjectFinish from "./pages/Project/Project_finish.jsx"
+import MissionMain from "./pages/Mission/Mission_main.jsx";
+import MissionDetail from "./pages/Mission/Mission_detail.jsx";
+import MissionWrite from "./pages/Mission/Mission_write.jsx";
+import MissionFinish from "./pages/Mission/Mission_finish.jsx";
+import ProjectWrite from "./pages/Project/Project_write.jsx";
+import ProjectFinish from "./pages/Project/Project_finish.jsx";
 import MypageMain from "./pages/Mypage/Mypage_main.jsx"
-import UserEdit from "./pages/Mypage/UserEdit.jsx"
-import FamilyPlus from "./pages/Mypage/FamilyPlus.jsx"
-import PointMain from "./pages/Point/PointMain.jsx"
+import UserEdit from "./pages/Mypage/UserEdit.jsx";
+import FamilyPlus from "./pages/Mypage/FamilyPlus.jsx";
+import PointMain from "./pages/Point/PointMain.jsx";
 import Login from "./pages/Login/login.jsx";
 import SignUp from "./pages/SignUp/signup.jsx";
 import SignIn from "./pages/SignUp/SignIn.jsx";
 import InputFam from "./pages/Family/InputFam.jsx";
 import NavUp from "./components/NavUp/NavUp.jsx";
-import FamilyInfo from "./pages/Mypage/Family_Info.jsx"
+import Family_Info from "./pages/Mypage/Family_Info.jsx"
 import FamilyEdit from "./pages/Mypage/FamilyEdit.jsx"
 import ProjectDetail from "./pages/Project/project_detail.jsx"
 import FamilyDiary from "./pages/Private/FamilyDiary.jsx";
@@ -38,12 +38,12 @@ function App() {
         <Route path='/ProjectFinish' element={<ProjectFinish/>}/>
         <Route path='/MypageMain' element={<><Nav /><MypageMain /></>}/>
         <Route path='/UserEdit' element={<><Nav /><UserEdit /></>}/>
+        <Route path='/Family_Info' element={<Family_Info />} />
         <Route path='/FamilyPlus' element={<><Nav /><FamilyPlus /></>}/>
         <Route path='/PointMain' element={<><Nav /><PointMain /></>}/>
         <Route path='/signup' element={<><NavUp /><SignUp /></>} />
-        <Route path='/signin' element={<><NavUp /><SignIn /></>} />
+        <Route path='/SignIn' element={<><NavUp /><SignIn /></>} />
         <Route path='/inputFam' element={<><NavUp /><InputFam /></>} />
-        <Route path='/FamilyInfo' element={<><Nav /><FamilyInfo /></>} />
         <Route path='/FamilyEdit' element={<><Nav /><FamilyEdit /></>} />
         <Route path='/ProjectDetail' element={<><Nav /><ProjectDetail /></>} />
         <Route path='/FamilyDiary' element={<><Nav /><FamilyDiary /></>} />
