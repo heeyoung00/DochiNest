@@ -2,24 +2,24 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Nav from "./components/Nav/Nav.jsx";
 import Main from "./pages/Main/Main.jsx";
-import MissionMain from "./pages/Mission/Mission_main.jsx"
-import MissionDetail from "./pages/Mission/Mission_detail.jsx"
-import MissionWrite from "./pages/Mission/Mission_write.jsx"
-import MissionFinish from "./pages/Mission/Mission_finish.jsx"
-import ProjectWrite from "./pages/Project/Project_write.jsx"
-import ProjectFinish from "./pages/Project/Project_finish.jsx"
+import MissionMain from "./pages/Mission/Mission_main.jsx";
+import MissionDetail from "./pages/Mission/Mission_detail.jsx";
+import MissionWrite from "./pages/Mission/Mission_write.jsx";
+import MissionFinish from "./pages/Mission/Mission_finish.jsx";
+import ProjectWrite from "./pages/Project/Project_write.jsx";
+import ProjectFinish from "./pages/Project/Project_finish.jsx";
 import MypageMain from "./pages/Mypage/Mypage_main.jsx"
-import UserEdit from "./pages/Mypage/UserEdit.jsx"
-import FamilyPlus from "./pages/Mypage/FamilyPlus.jsx"
-import PointMain from "./pages/Point/PointMain.jsx"
+import UserEdit from "./pages/Mypage/UserEdit.jsx";
+import FamilyPlus from "./pages/Mypage/FamilyPlus.jsx";
+import PointMain from "./pages/Point/PointMain.jsx";
 import Login from "./pages/Login/login.jsx";
 import SignUp from "./pages/SignUp/signup.jsx";
 import SignIn from "./pages/SignUp/SignIn.jsx";
 import InputFam from "./pages/Family/InputFam.jsx";
 import NavUp from "./components/NavUp/NavUp.jsx";
-import Family_Info from "./pages/Mypage/Family_Info.jsx"
-import FamilyEdit from "./pages/Mypage/FamilyEdit.jsx"
-import ProjectDetail from "./pages/Project/project_detail.jsx"
+import Family_Info from "./pages/Mypage/Family_Info.jsx";
+import FamilyEdit from "./pages/Mypage/FamilyEdit.jsx";
+import ProjectDetail from "./pages/Project/project_detail.jsx";
 import FamilyMission from "./pages/Private/Family_mission.jsx";
 import FamilyDiary from "./pages/Private/FamilyDiary.jsx";
 
