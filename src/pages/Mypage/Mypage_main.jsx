@@ -77,9 +77,9 @@ export default function Mypage_main() {
           </div>
           <div className="mypage-main-line"></div>
           <div className="mypage-m-f-menu">
-            <span onClick={() => navigate("FamilyInfo")}>가족 소개</span>
+            <span onClick={() => navigate("/Family_Info")}>가족 소개</span> {/* 수정했음 */}
             <span onClick={() => navigate("/PointMain")}>5000P</span>
-            <span>도전 과제</span>
+            <span onClick={() => navigate("/FamilyMission")}>도전 과제</span> {/* 수정했음 */}
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./PointMain.css";
 import back from "./images/back.png";
 import point1 from "./images/point1.png";
@@ -9,6 +10,7 @@ import pay from "./images/pay.png";
 
 export default function PointMain() {
   const [showIframe, setShowIframe] = useState(false);
+  const navigate = useNavigate();
 
   const family = {
     points: 1300,
@@ -19,10 +21,14 @@ export default function PointMain() {
     setShowIframe(true);
   };
 
+  const handleBackPage = () => {
+    navigate("/MypageMain");
+  }
+
   return (
     <div className="point-main-container">
       <div className="mission-d-top">
-        <div className="mission-d-back-img" >
+        <div className="mission-d-back-img" onClick={handleBackPage}> {/* 클릭 이벤트 추가 */}
           <img src={back} alt="" />
         </div>
         <div className="mission-d-title">포인트</div>

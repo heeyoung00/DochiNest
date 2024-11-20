@@ -10,7 +10,6 @@ import ProjectWrite from "./pages/Project/Project_write.jsx"
 import ProjectFinish from "./pages/Project/Project_finish.jsx"
 import MypageMain from "./pages/Mypage/Mypage_main.jsx"
 import UserEdit from "./pages/Mypage/UserEdit.jsx"
-import FamilyInfo from "./pages/Mypage/FamilyInfo.jsx";
 import FamilyPlus from "./pages/Mypage/FamilyPlus.jsx"
 import PointMain from "./pages/Point/PointMain.jsx"
 import Login from "./pages/Login/login.jsx";
@@ -20,6 +19,8 @@ import InputFam from "./pages/Family/InputFam.jsx";
 import NavUp from "./components/NavUp/NavUp.jsx";
 import Family_Info from "./pages/Mypage/Family_Info.jsx"
 import FamilyEdit from "./pages/Mypage/FamilyEdit.jsx"
+import FamilyMission from "./pages/Private/Family_mission.jsx";
+import FamilyDiary from "./pages/Private/FamilyDiary.jsx";
 
 
 function App() {
@@ -42,8 +43,9 @@ function App() {
         <Route path='/signup' element={<><NavUp /><SignUp /></>} />
         <Route path='/SignIn' element={<><NavUp /><SignIn /></>} />
         <Route path='/inputFam' element={<><NavUp /><InputFam /></>} />
-        <Route path='/FamilyInfo' element={<><Nav /><FamilyInfo /></>} />
         <Route path='/FamilyEdit' element={<><Nav /><FamilyEdit /></>} />
+        <Route path='/FamilyMission' element={<FamilyMission/>}/>
+        <Route path='/FamilyDiary' element={<><Nav /><FamilyDiary /></>} />
       </Routes>
     </BrowserRouter>
   );
