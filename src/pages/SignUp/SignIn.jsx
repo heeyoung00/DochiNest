@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SignIn.css';
-import S_Hedgehog from '../../pages/Login/L_Hedgehog.png';
+import dochi from '../../pages/Login/loginDochi.png';
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -17,11 +17,11 @@ const SignIn = () => {
 
     <div className="signContainer" onClick={handlePageClick}>
 
-      <img src={S_Hedgehog} alt="Hedgehog" className="SignHedgehog" />
+      <img src={dochi} alt="Hedgehog" className="SignHedgehog" />
 
       <div className="textContainer">
-        <h2>가입완료!</h2>
-        <p>{nickname}님 환영해요!</p>
+        <span>가입 완료!</span>
+        <p>{nickname}님, 환영해요!</p>
       </div>
     </div>
     

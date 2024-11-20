@@ -54,7 +54,7 @@ const SignUp = () => {
 
         <div className="signinGroup">
           <label htmlFor="id">
-            아이디 <span className="required">*</span>
+            <span className="required">*</span>아이디
           </label>
           <input
             type="text"
@@ -69,7 +69,7 @@ const SignUp = () => {
 
         <div className="signinGroup">
           <label htmlFor="password">
-            비밀번호 <span className="required">*</span>
+            <span className="required">*</span>비밀번호
           </label>
           <input
             type="password"
@@ -84,7 +84,7 @@ const SignUp = () => {
 
         <div className="signinGroup">
           <label htmlFor="email">
-            이메일 <span className="required">*</span>
+            <span className="required">*</span>이메일
           </label>
           <input
             type="email"
@@ -99,7 +99,7 @@ const SignUp = () => {
 
         <div className="signinGroup">
           <label htmlFor="nickname">
-            닉네임 <span className="required">*</span>
+            <span className="required">*</span>닉네임
           </label>
           <input
             type="text"
@@ -113,7 +113,7 @@ const SignUp = () => {
         </div>
 
         <button type="submit" className="submitBtn" onClick={handleSignUp}>
-        회원가입
+        회원가입 완료
       </button>
 
       </div>

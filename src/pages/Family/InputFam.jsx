@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './InputFam.css';
-import S_Hedgehog from '../../pages/Login/L_Hedgehog.png';
+import dochi from '../../pages/Login/loginDochi.png';
 
 const InputFam = () => {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ const InputFam = () => {
 
   const handleSkipClick = () => {
     // 건너뛰기 버튼 클릭 시 '/가족구성원페이지'로 이동
-    navigate('/');
+    navigate('/main');
   };
 
   const accessToken = localStorage.getItem("accessToken")
@@ -39,12 +39,12 @@ const InputFam = () => {
   return (
     <div className="inputFamContainer">
       <div className="imageContainer">
-        <img src={S_Hedgehog} alt="Hedgehog" className="cHedgehog" />
+        <img src={dochi} alt="Hedgehog" className="cHedgehog" />
       </div>
       <input
         type="text"
         className="formText"
-        placeholder="가족명을 입력해주세요!"
+        placeholder="가족명을 입력해 주세요!"
         value={familyname}
         onChange={(e) => setFamilyName(e.target.value)}
         required

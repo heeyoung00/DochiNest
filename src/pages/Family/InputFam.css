@@ -1,10 +1,35 @@
 /* position absolute 풀어야 함 */
 
+.imageContainer img{
+    width: 204.45px;
+    height: 186px;
+    margin-bottom: -30px;   
+}
+
+
 .inputFamContainer {
+    margin-top: 130px;
     position: absolute;
     top: 40%; /* 화면에서 50% 아래로 */
     left: 50%; /* 화면에서 50% 왼쪽으로 */
     transform: translate(-50%, -50%); /* 정확히 중앙에 오도록 이동 */
+    text-align: center;
+}
+
+.imageContainer {
+    font-family: 'Pretendard-SemiBold';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 23.87px;
+    text-align: center;
+}
+
+.inputFamContainer ::placeholder{
+    color:#aaaaaa;
+    font-family: 'Pretendard-SemiBold';
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23.87px;
     text-align: center;
 }
 
@@ -15,15 +40,20 @@
 
 .formText {
     font-size: 18px;
-    color: black;
+    /* color: #AAAAAA; */
     text-align: center;
     margin: 10px 0;
-    padding: 15px 25px;
-    width: 280px;
-    height: 30px;
+    padding: 0px 10px;
+    width: 330px;
+    height: 54px;
     border-radius: 50px;
-    border: 1px solid #ccc;
+    border: 2px solid #F9957F;
     transition: border-color 0.3s ease;
+    font-family: 'Pretendard-Medium';
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23.87px;
+    text-align: center;
 }
 
 /* :focus 선택자 수정: 공백 제거 */
@@ -34,13 +64,16 @@
 
 /* 링크 위치 조정 */
 .registerLink {
+    font-family: 'Pretendard-SemiBold';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21.48px;
     display: block;
     text-align: center;
-    font-size: 16px;
     color: #f9957f;
     text-decoration: none;
     cursor: pointer;
-    margin-top: 10px;  /* 위쪽으로 약간 올리기 */
+    margin-bottom: 150px;
 }
 
 .registerLink:hover {
@@ -50,26 +83,36 @@
 .submit-family-name {
     background: linear-gradient(to right, #F2F5D0, #F9957F);
     border-radius: 20px;
-    height: 30px;
+    height: 40px;
     width: 120px;
     margin: 10px;
     border: none;
     color: white;
     cursor: pointer;
+    font-family: 'Pretendard-Medium';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23.87px;
 }
 
 .mypageText {
-    font-size: 12px;
+    font-size: 13px;
+    font-family: 'Pretendard-Regular';
+    font-weight: 400;
+    line-height: 21.48px; 
 }
 
 .skipButton {
     text-align: center;
     width: 120px;
-    padding: 10px 20px;
-    font-size: 14px;
+    padding: 11px 20px;
+    font-size: 16px;
     border: none;
     border-radius: 20px;
     background: linear-gradient(to right, #F2F5D0, #F9957F);
-    color: white;
     cursor: pointer;
+    font-family: 'Pretendard-SemiBold';
+    font-weight: 600;
+    line-height: 21.48px;
+    color: #ffffff;
 }

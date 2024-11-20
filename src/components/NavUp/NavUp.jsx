@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import './NavUp.css';
-import back from "../../pages/Mission/images/back.png";
+import back from "./back.png"
 
 const NavUp = () => {
     const navigate = useNavigate();
@@ -27,11 +27,9 @@ const NavUp = () => {
 
     return (
         <div className="header">
-
-            <div className="goBack" onClick={() => navigate('/')}>
+            <button className="backButton" onClick={handleBackButtonClick}>
                 <img src={back} alt="" />
-            </div>
-
+            </button>
             <span className="headerText">{headerText}</span>
         </div>
     );

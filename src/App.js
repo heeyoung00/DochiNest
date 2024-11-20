@@ -19,6 +19,7 @@ import InputFam from "./pages/Family/InputFam.jsx";
 import NavUp from "./components/NavUp/NavUp.jsx";
 import Family_Info from "./pages/Mypage/Family_Info.jsx"
 import FamilyEdit from "./pages/Mypage/FamilyEdit.jsx"
+import ProjectDetail from "./pages/Project/project_detail.jsx"
 import FamilyMission from "./pages/Private/Family_mission.jsx";
 import FamilyDiary from "./pages/Private/FamilyDiary.jsx";
 
@@ -44,6 +45,7 @@ function App() {
         <Route path='/SignIn' element={<><NavUp /><SignIn /></>} />
         <Route path='/inputFam' element={<><NavUp /><InputFam /></>} />
         <Route path='/FamilyEdit' element={<><Nav /><FamilyEdit /></>} />
+        <Route path='/ProjectDetail' element={<><Nav /><ProjectDetail /></>} />
         <Route path='/FamilyMission' element={<FamilyMission/>}/>
         <Route path='/FamilyDiary' element={<><Nav /><FamilyDiary /></>} />
       </Routes>
