@@ -32,7 +32,7 @@ export default function Project_write() {
     }
 
     try {
-      const response = await axios.post('http://44.193.101.200:80/api/project/create', formData,
+      const response = await axios.post('https://dochi-nest-api.shop/api/project/create', formData,
         {
           headers: {
             'Authorization': `Bearer ${accessToken}`,

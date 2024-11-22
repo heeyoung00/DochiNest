@@ -7,7 +7,30 @@ import mission1 from '../Mission/images/mission1.png';
 
 export default function Family_mission() {
     const navigate = useNavigate();
-    const [missionPost, setmissionPost] = useState([]);
+    const [missionPost, setMissionPost] = useState([]);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            const accessToken = localStorage.getItem('accessToken');
+            try {
+                const response = await axios.get('https://dochi-nest-api.shop/api/user/challenges', {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`,
+                    }
+                });
+
+                if (response.status === 200) {
+                    setMissionPost(response.data); 
+                    console.log("조회 성공", response); 
+                } else {
+                    console.error('Failed to fetch:', response);
+                }
+            } catch (error) {
+                console.error('Error fetching posts:', error);
+            }
+        };
+        fetchPosts();
+    }, []);
 
     // 오늘 날짜
     const getTodayDate = () => {
@@ -20,44 +43,46 @@ export default function Family_mission() {
 
     const todayDate = getTodayDate();
 
-
-    const handleNavigate = (title) => {
-        navigate('/FamilyDiary', { state: { title } });
+    const handleNavigate = (id) => {
+        // 해당 아이디를 가지고 상세 페이지로 이동
+        navigate(`/FamilyDiary/${id}`);
     };
-
-    const missionId1 = missionPost.length > 0 ? missionPost.find((item) => item.id === 1) : null;
 
     return (
         <div className="missionContainer">
             <div className="missionTop">
                 <div className="mission_back_img" onClick={() => navigate('/MypageMain')}>
-                    <img src={back} alt="" />
+                    <img src={back} alt="back" />
                 </div>
                 <div className="missionTitle">도전 과제 내역</div>
             </div>
+            <div className="mission-family-underline"></div>
+
 
             <div className="missionContent">
                 <div className="missionDate">{todayDate}</div>
 
-                <div className="mission1" onClick={() => handleNavigate('가을 축제 방문하기')}>
-                    <div className="mission_1_text">
-                        <div className="mission_main_sub">
-                            지역 축제 방문하기! <br />
-                            <span>가을 축제 방문하기</span>
+                {missionPost.map((mission, index) => (
+                    <div key={index} className="mission1" onClick={() => handleNavigate(mission.id)}>
+                        <div className="mission_1_text">
+                            <div className="mission_main_sub">
+                                {mission.title} <br />
+                                <span>{mission.category}</span>
+                            </div>
+                            <div className="mission_1_daypoint">
+                                <div className="mission_1_day">
+                                    D-{mission.dday || 'N/A'}
+                                </div>
+                                <div className="mission_1_point">
+                                    {mission.points || 'N/A'}P
+                                </div>
+                            </div>
                         </div>
-                        <div className="mission_1_daypoint">
-                            <div className="mission_1_day">
-                                D-{missionId1 ? missionId1.dday : 'N/A'}
-                            </div>
-                            <div className="mission_1_point">
-                                {missionId1 && missionId1.points ? missionId1.points : 'N/A'}P
-                            </div>
+                        <div className="mission_1_img">
+                            <img src={mission1} alt="mission1" />
                         </div>
                     </div>
-                    <div className="mission_1_img">
-                        <img src={mission1} alt="" />
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     );

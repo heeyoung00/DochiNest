@@ -3,13 +3,17 @@
 }
 
 .missionTop {
-    background-color: #F9DED3;
+    background-color: #ffffff;
     display: flex;
     flex-direction: row;
     width: 393px;
     height: 70px;
     justify-content: center;
     align-items: center;
+}
+
+.mission-family-underline{
+    border: 1px solid #E3E3E3;
 }
 
 .mission_back_img img {

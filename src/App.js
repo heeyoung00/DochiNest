@@ -23,6 +23,8 @@ import ProjectDetail from "./pages/Project/project_detail.jsx"
 import FamilyDiary from "./pages/Private/FamilyDiary.jsx";
 import Family_mission from "./pages/Private/Family_mission.jsx";
 import FamilyProject from "./pages/Private/FamilyProject.jsx";
+import MissionNoDetail from "./pages/Mission/Mission_noDetail.jsx"
+
 
 function App() {
   return (
@@ -32,6 +34,7 @@ function App() {
         <Route path='/main' element={<><Nav /><Main /></>} />
         <Route path='/MissionMain' element={<><Nav /><MissionMain /></>}/>
         <Route path='/MissionDetail/:id' element={<><Nav /><MissionDetail /></>}/>
+        <Route path='/MissionNoDetail/:id' element={<><Nav /><MissionNoDetail /></>}/>
         <Route path='/MissionWrite/1' element={<><Nav /><MissionWrite /></>}/>
         <Route path='/MissionFinish' element={<MissionFinish/>}/>
         <Route path='/ProjectWrite' element={<><Nav /><ProjectWrite /></>}/>
@@ -42,13 +45,14 @@ function App() {
         <Route path='/FamilyPlus' element={<><Nav /><FamilyPlus /></>}/>
         <Route path='/PointMain' element={<><Nav /><PointMain /></>}/>
         <Route path='/signup' element={<><NavUp /><SignUp /></>} />
-        <Route path='/SignIn' element={<><NavUp /><SignIn /></>} />
-        <Route path='/inputFam' element={<><NavUp /><InputFam /></>} />
+        <Route path='/signin' element={<SignIn />} />
+        <Route path='/inputFam' element={<InputFam />} />
+        <Route path='/FamilyInfo' element={<><Nav /><FamilyInfo /></>} />
         <Route path='/FamilyEdit' element={<><Nav /><FamilyEdit /></>} />
         <Route path='/ProjectDetail' element={<><Nav /><ProjectDetail /></>} />
-        <Route path='/FamilyDiary' element={<><Nav /><FamilyDiary /></>} />
+        <Route path='/FamilyDiary/:id' element={<><Nav /><FamilyDiary /></>} />
         <Route path='/Family_mission' element={<><Nav /><Family_mission /></>} />
-        <Route path='/FamilyProject' element={<><Nav /><FamilyProject /></>} />
+        <Route path='/FamilyProject/:id' element={<><Nav /><FamilyProject /></>} />
       </Routes>
     </BrowserRouter>
   );

@@ -26,6 +26,20 @@
     font-style: normal;
 }
 
+.missionTop-2{
+    background-color: #F9DED3;
+    display: flex;
+    flex-direction: row;
+    width: 393px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+}
+
+.mission-family-underline-2{
+    border: #FFFFFF;
+}
+
 /* General Calendar Styles */
 .react-calendar {
     background-color: #FFFFFF;
@@ -121,7 +135,6 @@
     height: 25px;
     border-radius: 10px;
     border: 1px solid #F9957F;
-    opacity: 0px;
     font-family: 'Pretendard-SemiBold';
     font-size: 12px;
     font-weight: 600;
@@ -140,25 +153,26 @@
 }
 
 /* Location Input */
-.diary-write-location input {
-    width: 344px;
-    height: 46px;
+.diary-write-title input {
+    width: 359px;
+    height: 56px;
     background: #FFFFFF;
-    border-radius: 20px;
+    border-radius: 30px;
     border: 1px solid #F9957F;
     outline: none;
-    font-family: 'Pretendard-Regular';
-    font-size: 16px;
-    font-weight: 400;
+    font-family: 'Pretendard-SemiBold';
+    font-size: 20px;
+    font-weight: 600;
     padding-left: 15px;
     line-height: 53px;
-    margin-top: 20px;
+    margin-top: 15px;
+    text-align: center;
 }
 
-.diary-write-location ::placeholder {
+/* .diary-write-title ::placeholder {
     font-size: 16px;
     color: #AAAAAA;
-}
+} */
 
 /* Image Input */
 .diary-write-input-img {
@@ -166,30 +180,30 @@
     height: 186px;
     border-radius: 20px;
     background-color: #FFFFFF;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
-.diary-write-camera-img {
+/* .diary-write-camera-img {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 68px;
-}
+} */
 
-.diary-write-camera-img img {
-    width: 45px;
-    height: 41.25px;
+.diary-write-mission-img img{
+    width: 359px;
+    height: 191px;
+    border-radius: 20px;    
 }
-
 /* Textarea for Content */
 .diary-write-contents-container {
     position: relative;
-    margin-top: 18px;
+    margin-top: 10px;
 }
 
 .diary-write-contents-container textarea {
     width: 319px;
-    height: 220px;
+    height: 240px;
     border-radius: 20px;
     resize: none;
     border: none;

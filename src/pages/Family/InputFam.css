@@ -1,4 +1,28 @@
 /* position absolute 풀어야 함 */
+.inputFam-d-top{
+    display: flex;
+    /* flex-direction: row; */
+    width: 393px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    margin-top: -310px;
+}
+
+.inputFam-d-title{
+    font-family: 'Pretendard-SemiBold';
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 13px;
+    text-align: center;
+    margin-left: 15px;
+}
+.inputFam-underline{
+    margin-bottom: 180px;
+    width: 100%;
+    border: 1px solid #E3E3E3;
+}
 
 .imageContainer img{
     width: 204.45px;
@@ -8,7 +32,7 @@
 
 
 .inputFamContainer {
-    margin-top: 130px;
+    margin-top: 90px;
     position: absolute;
     top: 40%; /* 화면에서 50% 아래로 */
     left: 50%; /* 화면에서 50% 왼쪽으로 */
