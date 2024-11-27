@@ -47,7 +47,6 @@ function App() {
         <Route path='/signup' element={<><NavUp /><SignUp /></>} />
         <Route path='/signin' element={<SignIn />} />
         <Route path='/inputFam' element={<InputFam />} />
-        <Route path='/FamilyInfo' element={<><Nav /><FamilyInfo /></>} />
         <Route path='/FamilyEdit' element={<><Nav /><FamilyEdit /></>} />
         <Route path='/ProjectDetail' element={<><Nav /><ProjectDetail /></>} />
         <Route path='/FamilyDiary/:id' element={<><Nav /><FamilyDiary /></>} />
